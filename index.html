@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Tetris</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="logo-container">
+    <img src="tetris-logo.png" alt="Tetris Logo" id="tetris-logo">
+    <div id="legal-notice">
+      Tetris © 1985~<span id="current-year"></span> Tetris Holding.<br>
+      Tetris logos, Tetris theme song, and Tetriminos are trademarks of Tetris Holding.<br>
+      Licensed to The Tetris Company. Game Design by Alexey Pajitnov.<br>
+      Logo Design by Roger Dean. All Rights Reserved.
+    </div>
+  </div>
+
+  <div class="game-container">
+    <canvas id="tetris" width="200" height="400"></canvas>
+    <div class="sidebar">
+      <div id="piece-container">
+        <div id="next-piece">
+          <h3>Next Piece</h3>
+          <canvas id="next-piece-canvas" width="70" height="70"></canvas>
+        </div>
+        <div id="hold-piece">
+          <h3>Hold Piece</h3>
+          <canvas id="hold-piece-canvas" width="70" height="70"></canvas>
+        </div>
+      </div>
+      <div id="score">Score: 0</div>
+      <div id="level">Level: 1</div>
+      <div id="lines">Lines: 0</div>
+      <div id="controls">
+        <h3>Controls</h3>
+        <ul>
+          <li>Left Arrow: Move Left</li>
+          <li>Right Arrow: Move Right</li>
+          <li>Down Arrow: Move Down</li>
+          <li>Up Arrow: Rotate</li>
+          <li>Space: Drop</li>
+          <li>Shift or C: Hold Piece</li>
+          <li>Escape: Reset Game</li>
+          <li>Play/Pause Button: Start/Pause Game</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <audio id="theme-song" loop>
+    <source src="korobeiniki.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="rotate-sound">
+    <source src="rotate.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="move-sound">
+    <source src="move.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="drop-sound">
+    <source src="drop.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="button-container" style="margin-top: 20px;">
+    <button id="play-pause-button">▶</button>
+    <button id="sound-toggle-button">🔊</button>
+  </div>
+
+  <script src="controller.js"></script>
+  <script src="tetris_logic.js"></script>
+  <script src="renderer.js"></script>
+  <script src="my_tetris.js"></script>
+</body>
+</html>
